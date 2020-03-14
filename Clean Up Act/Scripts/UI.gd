@@ -15,8 +15,8 @@ func update_sentance(cFood, cAir, cSentance):
 	emit_signal("sentance_changed", sentance);
 """
 
-onready var food_bar = $MarginContainer/HBoxContainer/Food_Bar/Food/TextureProgress
-onready var air_bar = $MarginContainer/HBoxContainer/Air_Bar/Air/TextureProgress
+onready var food_bar = $MarginContainer/HBoxContainer/Food_Bar/Food
+onready var air_bar = $MarginContainer/HBoxContainer/Air_Bar/Air
 onready var sent_label = $MarginContainer/HBoxContainer/Sentance/sent_label
 # Declare member variables here. Examples:
 # var a = 2
@@ -24,10 +24,7 @@ onready var sent_label = $MarginContainer/HBoxContainer/Sentance/sent_label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    var food_max = $"../Player".food_max
-    food_bar.max_value = food_max
-    var air_max = $"../Player".air_max
-    air_max.max_value = air_max
+	pass
 	
 	
 	
@@ -42,7 +39,7 @@ func _on_Player_food_changed(food):
     update_food(food);
 	
 func _on_Player_sentance_changed(sentance):
-    pass
+    update_sentance(sentance)
 
 func update_air(new_val):
 	air_bar.value = new_val

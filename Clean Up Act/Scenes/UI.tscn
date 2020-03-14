@@ -19,7 +19,6 @@ margin_right = 922.0
 margin_bottom = 71.0
 
 [node name="Food_Bar" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-editor/display_folded = true
 margin_right = 396.0
 margin_bottom = 71.0
 
@@ -32,7 +31,7 @@ text = "Food"
 margin_top = 18.0
 margin_right = 396.0
 margin_bottom = 71.0
-value = 50.0
+value = 100.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
 
@@ -49,7 +48,11 @@ text = "      Sentance         "
 [node name="sent_label" type="Label" parent="MarginContainer/HBoxContainer/Sentance"]
 margin_top = 18.0
 margin_right = 118.0
-margin_bottom = 32.0
+margin_bottom = 49.0
+text = "85
+"
+align = 1
+valign = 1
 
 [node name="Air_Bar" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 margin_left = 522.0
@@ -65,7 +68,7 @@ text = "Air"
 margin_top = 18.0
 margin_right = 396.0
 margin_bottom = 71.0
-value = 50.0
+value = 100.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
 
