@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Can9.png-28cfe5a7bdf3ca4e1cb56d257d709c94.stex"
+path="res://.import/Can10.png-77d60af7f797e1d8ec7fe061343aa1c5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Can9.png"
-dest_files=[ "res://.import/Can9.png-28cfe5a7bdf3ca4e1cb56d257d709c94.stex" ]
+source_file="res://Sprites/Can10.png"
+dest_files=[ "res://.import/Can10.png-77d60af7f797e1d8ec7fe061343aa1c5.stex" ]
 
 [params]
 
