@@ -25,16 +25,20 @@ onready var hitRight = preload("res://Scenes/HitRight.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	#sets up timer for active frames
 	swipeActive = Timer.new()
 	swipeActive.connect("timeout",self,"_on_swipeActive_timeout") 
 	add_child(swipeActive)
 	swipeActive.one_shot = true
 	
+	#sets up timer for cooldown frames
 	swipeCooldown = Timer.new()
 	swipeCooldown.connect("timeout",self,"_on_swipeCooldown_timeout") 
 	add_child(swipeCooldown)
 	swipeCooldown.one_shot = true
 	
+	#sets position for swipe object
 	swipePosition = Vector2(global_position.x, global_position.y + swipeY)
 
 
@@ -59,22 +63,29 @@ func _process(delta):
 
 func make_swipe(hitDir):
 	
+	#create swipe collider
 	swipe = hitDir.instance()
 	add_child(swipe)
 	swipe.global_position = swipePosition
 	
+	#prevent swiping until cooldown is done
 	canSwipe = false;
 	
+	#starts active frames timer
 	swipeActive.start(sActive)
 
 func _on_swipeActive_timeout():
 	
+	#deletes swipe collider
 	swipe.queue_free()
 	remove_child(swipe)
 	
+	#starts cooldown frames timer
 	swipeCooldown.start(sCooldown)
 
 func _on_swipeCooldown_timeout():
+	
+	#allows for another swipe
 	canSwipe = true
 
 func update_sentance(cFood, cAir, cSentance):

@@ -3,7 +3,7 @@ extends "res://Scripts/TrashMover.gd"
 #NOTHING HERE YET
 #TODO: OVERWRITE hit_left / hit_right
 
-#inherits from TrashMover, should have access to all variables in TrashMover
+#inherits from TrashMover, has access to all variables in TrashMover
 
 func hit_left():
 	print("Paper hit left")

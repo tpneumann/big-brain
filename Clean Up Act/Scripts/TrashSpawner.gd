@@ -9,7 +9,7 @@ onready var trashes = [preload("res://Scenes/Paper.tscn"), preload("res://Scenes
 #dropTimer is the timer, dropRate how fast the timer gets called, dropSpeed is speed of trash falling
 var dropTimer
 var dropRate = 4
-var dropSpeed = 200
+var dropSpeed = 250
 
 
 # Called when the node enters the scene tree for the first time.

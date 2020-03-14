@@ -3,7 +3,7 @@ extends "res://Scripts/TrashMover.gd"
 #NOTHING HERE YET
 #TODO: OVERWRITE hit_left / hit_right
 
-#inherits from TrashMover, should have access to all variables in TrashMover
+#inherits from TrashMover, has access to all variables in TrashMover
 
 func hit_left():
 	print("Plastic hit left")
@@ -12,6 +12,3 @@ func hit_left():
 func hit_right():
 	print("Plastic hit right")
 	velocity = Vector2(0, newSpeed).rotated(deg2rad(270))
-
-func _process(delta):
-	print("bigTest")
