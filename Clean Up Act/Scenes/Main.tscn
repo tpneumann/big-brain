@@ -1,5 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
+
 [ext_resource path="res://Scenes/player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
@@ -16,3 +17,16 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="player"]
 texture = ExtResource( 2 )
+
+[ext_resource path="res://Scenes/TrashSpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/TrashSpawner.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/MainCamera.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TrashSpawner" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -350 )
+script = ExtResource( 2 )
+
+[node name="MainCamera" parent="." instance=ExtResource( 3 )]
+
