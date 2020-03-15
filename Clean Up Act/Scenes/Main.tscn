@@ -7,9 +7,9 @@
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Ocean.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Forest.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sprites/Game Over.png" type="Texture" id=8]
-[ext_resource path="res://background.wav" type="AudioStream" id=9]
-[ext_resource path="res://swossh.wav" type="AudioStream" id=10]
+[ext_resource path="res://background.wav" type="AudioStream" id=8]
+[ext_resource path="res://swossh.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sprites/Game Over.png" type="Texture" id=10]
 
 [node name="Node2D" type="Node2D"]
 
@@ -31,18 +31,19 @@ position = Vector2( -318.399, 264.592 )
 [node name="Ocean" parent="." instance=ExtResource( 6 )]
 
 [node name="Forest" parent="." instance=ExtResource( 7 )]
-
-[node name="GameOver" type="Sprite" parent="."]
-visible = false
-texture = ExtResource( 8 )
+editor/display_folded = false
 
 [node name="background" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 8 )
 volume_db = -2.0
 autoplay = true
 
 [node name="woosh" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 9 )
+
+[node name="GameOver" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 10 )
 [connection signal="air_changed" from="Player" to="UI" method="_on_Player_air_changed"]
 [connection signal="food_changed" from="Player" to="UI" method="_on_Player_food_changed"]
 [connection signal="sentance_changed" from="Player" to="UI" method="_on_Player_sentance_changed"]

@@ -114,6 +114,7 @@ func update_sentance(cFood, cAir, cSentance):
 	
 func game_over():
 	get_parent().get_node("GameOver").visible = true;
+	get_parent().get_node("TrashSpawner").visible = false; 
 	get_tree().paused = true;
 	gameOver = true
 	
