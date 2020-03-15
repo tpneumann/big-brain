@@ -48,4 +48,4 @@ func update_food(new_val):
 	food_bar.value = new_val
 
 func update_sentance(new_val):
-	sent_label.text = new_val
+	sent_label.text = str(new_val)

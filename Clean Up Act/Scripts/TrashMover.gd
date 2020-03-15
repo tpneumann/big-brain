@@ -50,7 +50,7 @@ func be_deleted():
 
 #TODO: ADD CODE fOR WHAT HAPPENS IF WE FAIL TO HIT IT
 func hit_player():
-	pass
+	be_deleted()
 
 #Must be inherited by paper and plastic
 func hit_left():

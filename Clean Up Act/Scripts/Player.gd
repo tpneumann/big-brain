@@ -93,9 +93,16 @@ func _on_swipeCooldown_timeout():
 	canSwipe = true
 
 func update_sentance(cFood, cAir, cSentance):
-    food = food + cFood
-    air = air + cAir
-    sentance = sentance + cSentance
-    emit_signal("food_changed", food);
-    emit_signal("air_changed", air);
-    emit_signal("sentance_changed", sentance);
+	food = food + cFood
+	air = air + cAir
+	sentance = sentance + cSentance
+	if sentance < 0 || air < 0 || food < 0:
+		game_over()
+	
+	emit_signal("food_changed", food);
+	emit_signal("air_changed", air);
+	emit_signal("sentance_changed", sentance);
+	
+func game_over():
+	print("GAME O V E R")
+	
