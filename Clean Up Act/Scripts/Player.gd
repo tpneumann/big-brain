@@ -116,13 +116,16 @@ func game_over():
 	get_parent().get_node("GameOver").visible = true;
 	##get_tree().change_scene("res:Scenes//GameOver.tscn")
 	get_parent().get_node("TrashSpawner").visible = false;  
-	var trashL = get_tree().get_nodes_in_group("left_swipe")
+	var trashL = get_tree().get_nodes_in_group("Paper")
 	for trash in trashL:
-		get_parent().remove_node(trash)
-	var trashR = get_tree().get_nodes_in_group("right_swipe")
+		trash.queue_free()
+		get_parent().remove_child(trash)
+		
+	var trashR = get_tree().get_nodes_in_group("Plastic")
 	for trash in trashR:
-		get_parent().remove_node(trash)
-	##get_tree().paused = true;
+		trash.queue_free()
+		get_parent().remove_child(trash)
+	get_tree().paused = true;
 	gameOver = true
 	
 	print("GAME O V E R")
