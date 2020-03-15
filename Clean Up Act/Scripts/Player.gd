@@ -74,7 +74,7 @@ func _process(delta):
 
 
 func make_swipe(hitDir):
-	
+	get_parent().get_node("woosh").play()
 	#create swipe collider
 	swipe = hitDir.instance()
 	add_child(swipe)
@@ -85,6 +85,7 @@ func make_swipe(hitDir):
 	
 	#starts active frames timer
 	swipeActive.start(sActive)
+	
 
 func _on_swipeActive_timeout():
 	
