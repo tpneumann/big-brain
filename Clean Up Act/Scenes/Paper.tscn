@@ -4,8 +4,11 @@
 [ext_resource path="res://Sprites/Paper.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.9988, 27.5527 )
 
-[node name="Paper" type="KinematicBody2D"]
+[node name="Paper" type="KinematicBody2D" groups=[
+"Paper",
+]]
 script = ExtResource( 1 )
 
 [node name="PaperSprite" type="Sprite" parent="."]

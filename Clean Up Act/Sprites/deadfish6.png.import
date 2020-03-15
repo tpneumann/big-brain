@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ dead fish1.png-1c8f31581d5ce443c7a2502be8e9de97.stex"
+path="res://.import/deadfish6.png-745634cd8b6d2dad9687c7759f3bd8de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ dead fish1.png"
-dest_files=[ "res://.import/ dead fish1.png-1c8f31581d5ce443c7a2502be8e9de97.stex" ]
+source_file="res://Sprites/deadfish6.png"
+dest_files=[ "res://.import/deadfish6.png-745634cd8b6d2dad9687c7759f3bd8de.stex" ]
 
 [params]
 

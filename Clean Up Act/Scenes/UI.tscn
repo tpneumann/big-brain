@@ -1,12 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/UI.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/energy_bar_bg.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/energy_bar_fill.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/lifebar_bg.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/lifebar_fill.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/energy_bar_bg.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/energy_bar_fill.png" type="Texture" id=5]
 
 [node name="UI" type="Node2D"]
 position = Vector2( 0, 300 )
 script = ExtResource( 1 )
+
+[node name="SentanceBG" type="TextureProgress" parent="."]
+margin_left = 265.0
+margin_top = -63.0
+margin_right = 896.0
+margin_bottom = -5.0
+rect_scale = Vector2( 0.25, 1 )
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_top = 1.0
@@ -15,7 +26,7 @@ anchor_bottom = 1.0
 margin_top = -53.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_right = 691.0
+margin_right = 631.0
 margin_bottom = 58.0
 
 [node name="Food_Bar" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
@@ -25,15 +36,18 @@ margin_bottom = 58.0
 [node name="Food_Label" type="Label" parent="MarginContainer/HBoxContainer/Food_Bar"]
 margin_right = 248.0
 margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "Food"
+align = 1
 
 [node name="Food" type="TextureProgress" parent="MarginContainer/HBoxContainer/Food_Bar"]
 margin_top = 18.0
 margin_right = 248.0
 margin_bottom = 58.0
 value = 100.0
-texture_under = ExtResource( 2 )
-texture_progress = ExtResource( 3 )
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
 margin_left = 252.0
@@ -42,37 +56,43 @@ margin_bottom = 58.0
 
 [node name="Sentance" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 margin_left = 256.0
-margin_right = 439.0
+margin_right = 379.0
 margin_bottom = 58.0
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Sentance"]
-margin_right = 183.0
+margin_right = 123.0
 margin_bottom = 14.0
-text = "               Sentence                "
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sentence                "
+align = 1
 
 [node name="sent_label" type="Label" parent="MarginContainer/HBoxContainer/Sentance"]
 margin_top = 18.0
-margin_right = 183.0
+margin_right = 123.0
 margin_bottom = 49.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "85
 "
 align = 1
 valign = 1
 
 [node name="Air_Bar" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 443.0
-margin_right = 691.0
+margin_left = 383.0
+margin_right = 631.0
 margin_bottom = 58.0
 
 [node name="Air_Label" type="Label" parent="MarginContainer/HBoxContainer/Air_Bar"]
 margin_right = 248.0
 margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "Air"
+align = 1
 
 [node name="Air" type="TextureProgress" parent="MarginContainer/HBoxContainer/Air_Bar"]
 margin_top = 18.0
 margin_right = 248.0
 margin_bottom = 58.0
 value = 100.0
-texture_under = ExtResource( 2 )
-texture_progress = ExtResource( 3 )
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 5 )

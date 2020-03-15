@@ -31,9 +31,10 @@ func _process(delta):
 			#Then, run the appropriate method 
 			var other = collision.collider
 			if other.is_in_group("player"):
-				hit_player()
+				hit_player(other)
 			elif other.is_in_group("left_swipe"):
 				hit_left()
+				print("beep boop")
 			elif other.is_in_group("right_swipe"):
 				hit_right()
 	
@@ -49,7 +50,8 @@ func be_deleted():
 	get_parent().remove_child(self)
 
 #TODO: ADD CODE fOR WHAT HAPPENS IF WE FAIL TO HIT IT
-func hit_player():
+func hit_player(player):
+	player.update_sentance(0,0,10)
 	be_deleted()
 
 #Must be inherited by paper and plastic
