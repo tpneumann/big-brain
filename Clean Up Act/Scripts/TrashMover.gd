@@ -37,6 +37,7 @@ func _process(delta):
 				print("beep boop")
 			elif other.is_in_group("right_swipe"):
 				hit_right()
+
 	
 	#if trash is below the screen, delete it
 	if global_position.y > 350:

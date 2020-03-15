@@ -105,7 +105,7 @@ func update_sentance(cFood, cAir, cSentance):
 	food = food + cFood
 	air = air + cAir
 	sentance = sentance + cSentance
-	if sentance < 0 || air < 0 || food < 0:
+	if sentance <= 0 || air <= 0 || food <= 0:
 		game_over()
 	
 	emit_signal("food_changed", food);
@@ -114,7 +114,7 @@ func update_sentance(cFood, cAir, cSentance):
 	
 func game_over():
 	get_parent().get_node("GameOver").visible = true;
-	get_parent().get_node("TrashSpawner").visible = false; 
+	get_parent().get_node("TrashSpawner").visible = false;  
 	get_tree().paused = true;
 	gameOver = true
 	
