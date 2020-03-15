@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Forest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://background.wav" type="AudioStream" id=8]
 [ext_resource path="res://swossh.wav" type="AudioStream" id=9]
-[ext_resource path="res://Sprites/Game Over.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 
@@ -41,9 +41,7 @@ autoplay = true
 [node name="woosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 
-[node name="GameOver" type="Sprite" parent="."]
-visible = false
-texture = ExtResource( 10 )
+[node name="GameOver" parent="." instance=ExtResource( 10 )]
 [connection signal="air_changed" from="Player" to="UI" method="_on_Player_air_changed"]
 [connection signal="food_changed" from="Player" to="UI" method="_on_Player_food_changed"]
 [connection signal="sentance_changed" from="Player" to="UI" method="_on_Player_sentance_changed"]

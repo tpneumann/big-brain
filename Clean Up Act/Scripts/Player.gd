@@ -114,8 +114,15 @@ func update_sentance(cFood, cAir, cSentance):
 	
 func game_over():
 	get_parent().get_node("GameOver").visible = true;
+	##get_tree().change_scene("res:Scenes//GameOver.tscn")
 	get_parent().get_node("TrashSpawner").visible = false;  
-	get_tree().paused = true;
+	var trashL = get_tree().get_nodes_in_group("left_swipe")
+	for trash in trashL:
+		get_parent().remove_node(trash)
+	var trashR = get_tree().get_nodes_in_group("right_swipe")
+	for trash in trashR:
+		get_parent().remove_node(trash)
+	##get_tree().paused = true;
 	gameOver = true
 	
 	print("GAME O V E R")
