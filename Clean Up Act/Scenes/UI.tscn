@@ -15,12 +15,12 @@ anchor_bottom = 1.0
 margin_top = -53.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_left = 150.0
-margin_bottom = 71.0
+margin_right = 691.0
+margin_bottom = 58.0
 
 [node name="Food_Bar" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 margin_right = 248.0
-margin_bottom = 71.0
+margin_bottom = 58.0
 
 [node name="Food_Label" type="Label" parent="MarginContainer/HBoxContainer/Food_Bar"]
 margin_right = 248.0
@@ -38,21 +38,21 @@ texture_progress = ExtResource( 3 )
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
 margin_left = 252.0
 margin_right = 252.0
-margin_bottom = 71.0
+margin_bottom = 58.0
 
 [node name="Sentance" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 margin_left = 256.0
-margin_right = 438.0
-margin_bottom = 71.0
+margin_right = 439.0
+margin_bottom = 58.0
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Sentance"]
-margin_right = 182.0
+margin_right = 183.0
 margin_bottom = 14.0
-text = "               Sentance                "
+text = "               Sentence                "
 
 [node name="sent_label" type="Label" parent="MarginContainer/HBoxContainer/Sentance"]
 margin_top = 18.0
-margin_right = 182.0
+margin_right = 183.0
 margin_bottom = 49.0
 text = "85
 "
@@ -60,9 +60,9 @@ align = 1
 valign = 1
 
 [node name="Air_Bar" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 442.0
-margin_right = 690.0
-margin_bottom = 71.0
+margin_left = 443.0
+margin_right = 691.0
+margin_bottom = 58.0
 
 [node name="Air_Label" type="Label" parent="MarginContainer/HBoxContainer/Air_Bar"]
 margin_right = 248.0
