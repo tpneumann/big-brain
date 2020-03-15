@@ -4,13 +4,17 @@ extends KinematicBody2D
 
 #creats a velocity variable to be referenced in drop and _process
 var velocity = Vector2()
+var speed = 0
+var newSpeed = 2
 
 #call when trash gets created, sets position to be created at, direction of sprite and speed
 func drop(pos, dir, spd):
 	
 	global_position = pos
 	rotation = dir
-	velocity = Vector2(0, spd).rotated(rotation)
+	speed = spd
+	newSpeed *= speed
+	velocity = Vector2(0, speed).rotated(rotation)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
