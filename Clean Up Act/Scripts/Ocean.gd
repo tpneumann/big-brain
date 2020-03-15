@@ -28,4 +28,5 @@ func _process(delta):
 
 func update_texture(): 
 	health += 1
-	ocean_sprite.set_texture(fishes[min(health, 7)])
+	if(health < 7):
+		ocean_sprite.set_texture(fishes[min(health, 7)])

@@ -29,4 +29,5 @@ func _process(delta):
 
 func update_texture(): 
 	health += 1
-	forest_sprite.set_texture(trees[min(health, 7)])
+	if health < 7:
+		forest_sprite.set_texture(trees[min(health, 7)])

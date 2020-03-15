@@ -11,6 +11,7 @@ signal sentance_changed;
 var food = 100; 
 var air = 100; 
 var sentance = 80; 
+var gameOver = false; 
 
 #holds swipe timer stuff
 var swipeActive
@@ -30,7 +31,8 @@ onready var hitRight = preload("res://Scenes/HitRight.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	get_tree().paused = false;
+	 
 	#sets up timer for active frames
 	swipeActive = Timer.new()
 	swipeActive.connect("timeout",self,"_on_swipeActive_timeout") 
@@ -56,6 +58,12 @@ func _process(delta):
 			
 		if Input.is_action_just_pressed("ui_right"):
 			make_swipe(hitRight)
+		
+		if Input.is_action_just_pressed("ui_down"):
+			game_over()
+		if Input.is_action_just_pressed("ui_up") && gameOver:
+			get_tree().reload_current_scene()
+			gameOver = false;
 		
 	##if object.is_colliding():
 		##update_sentance(-5, -5, 6);
@@ -104,5 +112,9 @@ func update_sentance(cFood, cAir, cSentance):
 	emit_signal("sentance_changed", sentance);
 	
 func game_over():
+	get_parent().get_node("GameOver").visible = true;
+	get_tree().paused = true;
+	gameOver = true
+	
 	print("GAME O V E R")
 	
