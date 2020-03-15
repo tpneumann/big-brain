@@ -1,5 +1,10 @@
 extends KinematicBody2D
 
+signal food_changed;
+signal air_changed;
+signal sentance_changed;
+
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -35,6 +40,9 @@ func _process(delta):
 	##if player hit
 		##remove food + air?
 func update_sentance(cFood, cAir, cSentance):
-	food = food + cFood
-	air = air + cAir
-	sentance = sentance + cSentance
+    food = food + cFood
+    air = air + cAir
+    sentance = sentance + cSentance
+    emit_signal("food_changed", food);
+    emit_signal("air_changed", air);
+    emit_signal("sentance_changed", sentance);
