@@ -25,7 +25,7 @@ var swipePosition
 var swipeY = -64
 
 #holds reference to swipe scenes
-onready var hitLeft  = preload("res://Scenes/SwipeLeft.tscn")
+onready var hitLeft  = preload("res://Scenes/HitLeft.tscn")
 onready var hitRight = preload("res://Scenes/HitRight.tscn")
 
 # Called when the node enters the scene tree for the first time.
